@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Status Monitor</title>
+    <link rel="stylesheet" href="css\u-style.css">
+</head>
+<body>
+    <header>
+        <h1>Service Status Monitor</h1>
+        <p>Stay informed about our service status and receive notifications for any outages or maintenance.</p>
+    </header>
+
+    <main>
+       
+        <!-- Notification Form Section -->
+        <section class="notification-container">
+            <h2 class="form-title">Subscribe to Status Notifications</h2>
+            <p>Get email notifications when our services experience disruptions or during scheduled maintenance.</p>
+            
+            <form id="email-notification-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Notification Types</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="notify-outages" name="notify_types[]" value="outages" checked>
+                            <label for="notify-outages">Service Outages</label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="notify-maintenance" name="notify_types[]" value="maintenance">
+                            <label for="notify-maintenance">Scheduled Maintenance</label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="notify-performance" name="notify_types[]" value="performance">
+                            <label for="notify-performance">Performance Issues</label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="notify-resolved" name="notify_types[]" value="resolved">
+                            <label for="notify-resolved">Resolution Notifications</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit">Subscribe</button>
+                
+                <div id="form-message"></div>
+            </form>
+        </section>
+
+       
+    </main>
+
+
+    <footer>
+        <p>© 2025 Your Company Name. All rights reserved.</p>
+        <p>This status page is automatically updated every 5 minutes.</p>
+    </footer>
+    </main>
+
+    <script src="js/status.js"></script>
+  
+</body>
+</html>

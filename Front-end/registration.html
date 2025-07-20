@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Government School Admission System</title>
+  <link rel="stylesheet" href="css/u-style.css">
+</head>
+<body>
+  <div class="register-container">
+    <h2>Register</h2>
+    <form id="registration-form" action="../backend/register_process.php" method="post">
+      <h3>User Information</h3>
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="username" placeholder="User Name" required>
+
+      <h3>Account Security</h3>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+      <h3>Select Role</h3>
+      <select name="role" title="role" required>
+        <option value="">-- Select Role --</option>
+        <option value="parent">Parent</option>
+        <option value="school_admin">School Admin</option>
+        <option value="ministry_staff">Student</option>
+      </select>
+
+      <h3>Student Details</h3>
+      <div class="student-details">
+        <input type="text" name="student_name" placeholder="Student's Name" required>
+        <label>Date of Birth:</label>
+        <input type="date" name="student_dob" required>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="link">
+      <p>Already have an account? <a href="../Front-end/home.html"> Here</a></p>
+    </div>
+  </div>
+
+  <script src="../Front-end/js/register.js"></script> 
+</body>
+</html>

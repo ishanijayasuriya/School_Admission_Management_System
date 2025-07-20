@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - User Management</title>
+    <link rel="stylesheet" href="css/style.css">
+     
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <span>Admin Panel</span>
+            </div>
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-users"></i> Dashboard</a></li>
+                <li><a href="../../backend/admin/application_view.php"><i class="fas fa-file-alt"></i> Applications</a></li>
+                <li class="active"><a href="u_accounts_management.html"><i class="fas fa-tachometer-alt"></i> User Management</a></li>
+                <!--<li><a href="a_system_seting.html"><i class="fas fa-cog"></i> Settings</a></li>-->
+            </ul>
+            <div class="sidebar-footer">
+                <a href="../../backend/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>User Management</h1>
+            </header>
+
+            <div class="content">
+                <div class="toolbar">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchUsers" placeholder="Search users...">
+                    </div>
+                    <button id="addUserBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add User
+                    </button>
+                </div>
+
+                <div class="user-table-container">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- Users will be loaded here via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination with accessibility fixes -->
+                <div class="pagination">
+                    <button id="prevPage" disabled aria-label="Previous Page" title="Previous Page">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+
+                    <span id="pageInfo">Page 1 of 5</span>
+
+                    <button id="nextPage" aria-label="Next Page" title="Next Page">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add/Edit User Modal -->
+        <div id="userModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Add New User</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="userForm">
+                        <input type="hidden" id="userId">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select id="role" required>
+                                <option value="">Select Role</option>
+                                <option value="admin">Admin</option>
+                                <option value="editor">Parent</option>
+                                <option value="viewer">Student</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" required>
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="suspended">Suspended</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="passwordGroup">
+                            <label for="password">Password</label>
+                            <input type="password" id="password">
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content confirm-modal">
+                <div class="modal-header">
+                    <h2>Confirm Action</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmMessage">Are you sure you want to delete this user?</p>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelConfirmBtn">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="confirmActionBtn">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/u-a-management.js"></script>
+</body>
+</html>

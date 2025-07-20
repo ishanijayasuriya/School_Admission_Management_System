@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 1 Admission Form - 2025</title>
+    <link rel="stylesheet" href="css/u-style.css">
+</head>
+<body>  
+
+
+    <div class="container">
+        <header>
+            <h1>Application for Admission to Grade 1 - 2025</h1>
+        </header>
+
+        <form id="admissionForm" action="../../backend/user/grade_1_process_form.php" method="POST" enctype="multipart/form-data">
+
+         <p>(A copy of the child's birth certificate and copies of all relevant documents under the category for which he is applying should be attached, certified by an affidavit.)</p>
+            <!-- Section 01: Category -->
+            <section class="form-section">
+                
+                <h2>01. Category applied for</h2>
+                <p>(If belonging to several categories, separate applications should be made)</p>
+                <div class="category-options">
+                    <label><input type="checkbox" name="categories[]" value="7.1">  Children of residents close to the school</label>
+                    <label><input type="checkbox" name="categories[]" value="7.2">  Children of Alumni</label>
+                    <label><input type="checkbox" name="categories[]" value="7.3">  Brothers/sisters of students already studying</label>
+                    <label><input type="checkbox" name="categories[]" value="7.4">  Children of staff in education institutions</label>
+                    <label><input type="checkbox" name="categories[]" value="7.5">  Children of transferred government officers</label>
+                    <label><input type="checkbox" name="categories[]" value="7.6">  Children of persons residing abroad</label>
+                </div>
+            </section>
+
+            <!-- Section 02: Child Details -->
+            <section class="form-section">
+                <h2>02. Details of the child</h2>
+                <div class="form-group">
+                    <label for="fullName">2.1 Full name (Draw a line under the surname)</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nameSinhala">2.2 Name with initials (in Sinhala)</label>
+                        <input type="text" id="nameSinhala" name="nameSinhala" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameEnglish">2.3 Name with initials (in English)</label>
+                        <input type="text" id="nameEnglish" name="nameEnglish" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender">2.4 Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="religion">2.5 Religion</label>
+                        <select id="religion" name="religion" required>
+                            <option value="">Select</option>
+                            <option value="Buddhist">Buddhist</option>
+                            <option value="Christian">Christian</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="medium">2.6 Medium of instruction</label>
+                        <select id="medium" name="medium" required>
+                            <option value="">Select</option>
+                            <option value="Sinhala">Sinhala</option>
+                            <option value="Tamil">Tamil</option>
+                            <option value="Tamil">English</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">2.7 Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">2.8 Age as on 31st February 2025</label>
+                    <div class="age-inputs">
+                        <input type="number" id="ageYears" name="ageYears" placeholder="Years" min="0" required>
+                        <input type="number" id="ageMonths" name="ageMonths" placeholder="Months" min="0" max="11" required>
+                        <input type="number" id="ageDays" name="ageDays" placeholder="Days" min="0" max="30" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 03: Applicant Details -->
+            <section class="form-section">
+                <h2>03. Details of the Applicant (Mother/Father/Guardian's Father)</h2>
+                
+                <h3>Applicant</h3>
+                <div class="form-group">
+                    <label for="applicantFullName">3.1 Full Name</label>
+                    <input type="text" id="applicantFullName" name="applicantFullName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicantInitials">3.3 Name with Initials</label>
+                        <input type="text" id="applicantInitials" name="applicantInitials" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantNIC">3.5 National Identity Card Number</label>
+                        <input type="text" id="applicantNIC" name="applicantNIC" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicantSriLankan">3.7 Sri Lankan</label>
+                        <select id="applicantSriLankan" name="applicantSriLankan" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantReligion">3.9 Religion</label>
+                        <select id="applicantReligion" name="applicantReligion" required>
+                            <option value="">Select</option>
+                            <option value="Buddhist">Buddhist</option>
+                            <option value="Christian">Christian</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantAddress">3.11 Residential Address</label>
+                    <textarea id="applicantAddress" name="applicantAddress" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicantPhone">3.13 Telephone Number</label>
+                        <input type="tel" id="applicantPhone" name="applicantPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantDistrict">3.15 District of Residence</label>
+                        <input type="text" id="applicantDistrict" name="applicantDistrict" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicantDSDivision">3.17 Divisional Secretariat Division</label>
+                        <input type="text" id="applicantDSDivision" name="applicantDSDivision" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantGNDomain">3.19 Grama Niladhari Domain</label>
+                        <input type="text" id="applicantGNDomain" name="applicantGNDomain" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantGNNumber">3.19 Grama Niladhari Number</label>
+                    <input type="text" id="applicantGNNumber" name="applicantGNNumber" required>
+                </div>
+                
+                <h3>Partner</h3>
+                <div class="form-group">
+                    <label for="partnerFullName">3.2 Full Name</label>
+                    <input type="text" id="partnerFullName" name="partnerFullName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="partnerInitials">3.4 Name with Initials</label>
+                        <input type="text" id="partnerInitials" name="partnerInitials" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerNIC">3.6 National Identity Card Number</label>
+                        <input type="text" id="partnerNIC" name="partnerNIC" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="partnerSriLankan">3.8 Sri Lankan</label>
+                        <select id="partnerSriLankan" name="partnerSriLankan" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerReligion">3.10 Religion</label>
+                        <select id="partnerReligion" name="partnerReligion" required>
+                            <option value="">Select</option>
+                            <option value="Buddhist">Buddhist</option>
+                            <option value="Christian">Christian</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="partnerAddress">3.12 Residential Address</label>
+                    <textarea id="partnerAddress" name="partnerAddress" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="partnerPhone">3.14 Telephone Number</label>
+                        <input type="tel" id="partnerPhone" name="partnerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerDistrict">3.16 District of Residence</label>
+                        <input type="text" id="partnerDistrict" name="partnerDistrict" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="partnerDSDivision">3.18 Divisional Secretariat Division</label>
+                        <input type="text" id="partnerDSDivision" name="partnerDSDivision" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerGNDomain">3.20 Grama Niladhari Domain</label>
+                        <input type="text" id="partnerGNDomain" name="partnerGNDomain" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="partnerGNNumber">3.20 Grama Niladhari Number</label>
+                    <input type="text" id="partnerGNNumber" name="partnerGNNumber" required>
+                </div>
+            </section>
+
+            <!-- Section 04: Schools Applied For -->
+            <section class="form-section">
+                <h2>04. Schools applied for (These 6 schools should be written in the order of preference)</h2>
+                <p>(In case your child is selected for several schools applied for, the school with the highest priority will be given considering the priority order mentioned above and the name will be removed from the list of other schools.)</p>
+                
+                <div class="schools-list">
+                    <div class="school-entry">
+                        <div class="form-group">
+                            <label for="school1">01</label>
+                            <input type="text" id="school1" name="schools[]" placeholder="Name of School" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="schoolCategories[]" required>
+                                <option value="">Category</option>
+                                <option value="National">National</option>
+                                <option value="Provincial">Provincial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="schoolDistances[]" placeholder="Distance (km/mi.)" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Repeat for schools 2-6 -->
+                    <div class="school-entry">
+                        <div class="form-group">
+                            <label for="school2">02</label>
+                            <input type="text" id="school2" name="schools[]" placeholder="Name of School" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="schoolCategories[]" required>
+                                <option value="">Category</option>
+                                <option value="National">National</option>
+                                <option value="Provincial">Provincial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="schoolDistances[]" placeholder="Distance (km/mi.)" required>
+                        </div>
+                    </div>
+                    
+                    <div class="school-entry">
+                        <div class="form-group">
+                            <label for="school3">03</label>
+                            <input type="text" id="school3" name="schools[]" placeholder="Name of School" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="schoolCategories[]" required>
+                                <option value="">Category</option>
+                                <option value="National">National</option>
+                                <option value="Provincial">Provincial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="schoolDistances[]" placeholder="Distance (km/mi.)" required>
+                        </div>
+                    </div>
+                    
+                    <div class="school-entry">
+                        <div class="form-group">
+                            <label for="school4">04</label>
+                            <input type="text" id="school4" name="schools[]" placeholder="Name of School" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="schoolCategories[]" required>
+                                <option value="">Category</option>
+                                <option value="National">National</option>
+                                <option value="Provincial">Provincial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="schoolDistances[]" placeholder="Distance (km/mi.)" required>
+                        </div>
+                    </div>
+                    
+                    <div class="school-entry">
+                        <div class="form-group">
+                            <label for="school5">05</label>
+                            <input type="text" id="school5" name="schools[]" placeholder="Name of School" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="schoolCategories[]" required>
+                                <option value="">Category</option>
+                                <option value="National">National</option>
+                                <option value="Provincial">Provincial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="schoolDistances[]" placeholder="Distance (km/mi.)" required>
+                        </div>
+                    </div>
+                    
+                    <div class="school-entry">
+                        <div class="form-group">
+                            <label for="school6">06</label>
+                            <input type="text" id="school6" name="schools[]" placeholder="Name of School" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="schoolCategories[]" required>
+                                <option value="">Category</option>
+                                <option value="National">National</option>
+                                <option value="Provincial">Provincial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="schoolDistances[]" placeholder="Distance (km/mi.)" required>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 05: Other Schools -->
+            <section class="form-section">
+                <h2>05. Other schools that the child can enroll in that are closer to the place of residence than the school being applied for</h2>
+                <div class="other-schools">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="otherSchool1">1.</label>
+                            <input type="text" id="otherSchool1" name="otherSchools[]">
+                        </div>
+                        <div class="form-group">
+                            <label for="otherSchool6">6.</label>
+                            <input type="text" id="otherSchool6" name="otherSchools[]">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="otherSchool2">2.</label>
+                            <input type="text" id="otherSchool2" name="otherSchools[]">
+                        </div>
+                        <div class="form-group">
+                            <label for="otherSchool7">7.</label>
+                            <input type="text" id="otherSchool7" name="otherSchools[]">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="otherSchool3">3.</label>
+                            <input type="text" id="otherSchool3" name="otherSchools[]">
+                        </div>
+                        <div class="form-group">
+                            <label for="otherSchool8">8.</label>
+                            <input type="text" id="otherSchool8" name="otherSchools[]">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="otherSchool4">4.</label>
+                            <input type="text" id="otherSchool4" name="otherSchools[]">
+                        </div>
+                        <div class="form-group">
+                            <label for="otherSchool9">9.</label>
+                            <input type="text" id="otherSchool9" name="otherSchools[]">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="otherSchool5">5.</label>
+                            <input type="text" id="otherSchool5" name="otherSchools[]">
+                        </div>
+                        <div class="form-group">
+                            <label for="otherSchool10">10.</label>
+                            <input type="text" id="otherSchool10" name="otherSchools[]">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 06: Guardianship -->
+            <section class="form-section">
+                <h2>06. Permit to operate a guardianship</h2>
+                <p>(Parents/legal guardians of immediate and sibling relatives required to prove residence should obtain details from the Grama Niladhari office and complete this section and certify it themselves.)</p>
+                
+                <div class="guardianship-years">
+                    <!-- Repeat this block for each year needed -->
+                    <div class="guardianship-year">
+                        <div class="form-group">
+                            <label>Year</label>
+                            <input type="text" name="guardianshipYear[]">
+                        </div>
+                        <div class="form-group">
+                            <label>Constituency</label>
+                            <input type="text" name="guardianshipConstituency[]">
+                        </div>
+                        <div class="form-group">
+                            <label>Constituency Division</label>
+                            <input type="text" name="guardianshipDivision[]">
+                        </div>
+                        <div class="form-group">
+                            <label>Village/Street, Estate</label>
+                            <input type="text" name="guardianshipVillage[]">
+                        </div>
+                        <div class="form-group">
+                            <label>Grama Niladhari Division and Number</label>
+                            <input type="text" name="guardianshipGNDivision[]">
+                        </div>
+                        <div class="form-group">
+                            <label>House Number</label>
+                            <input type="text" name="guardianshipHouseNo[]">
+                        </div>
+                        <div class="form-group">
+                            <label>Order Number</label>
+                            <input type="text" name="guardianshipOrderNo[]">
+                        </div>
+                        <div class="form-group">
+                            <label>Names of the voters (all present)</label>
+                            <textarea name="guardianshipVoters[]"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more years as needed -->
+                    <button type="button" id="addGuardianshipYear" class="btn-add">+ Add Another Year</button>
+                </div>
+            </section>
+
+            <!-- Section 07: Category Specific Sections -->
+            <section class="form-section">
+                <h2>07. Complete only the section relevant to the category you are applying for</h2>
+                
+                <!-- 7.1: Residents close to school -->
+                <div id="section7_1" class="category-section">
+                    <h3>7.1 Children of residents close to the school</h3>
+                    
+                    <div class="form-group">
+                        <label>7.1.1 Main documents proving residence (PDF files)</label>
+                        <input type="file" name="residenceMainDocs[]" accept=".pdf" multiple>
+                        <small>Upload 4 PDF files</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.1.2 Additional documents proving residence (PDF files)</label>
+                        <input type="file" name="residenceAdditionalDocs[]" accept=".pdf" multiple>
+                        <small>Upload 5 PDF files</small>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="applicantElectoralYears">7.1.3 Number of years the applicant's name has been included in the electoral roll</label>
+                            <input type="number" id="applicantElectoralYears" name="applicantElectoralYears" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="guardianElectoralYears">Number of years the legal guardian's name has been included in the electoral roll</label>
+                            <input type="number" id="guardianElectoralYears" name="guardianElectoralYears" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="closerSchoolsCount">7.1.4 Number of other schools closer to the place of residence than the school applied for</label>
+                        <input type="number" id="closerSchoolsCount" name="closerSchoolsCount" min="0">
+                    </div>
+                </div>
+                
+                <!-- 7.2: Alumni -->
+                <div id="section7_2" class="category-section">
+                    <h3>7.2 Children of Alumni</h3>
+                    
+                    <div class="form-group">
+                        <label for="alumniGradesStudied">7.2.1 Number of grades studied in the school applied for as a student</label>
+                        <input type="number" id="alumniGradesStudied" name="alumniGradesStudied" min="0">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="alumniFromGrade">From grade</label>
+                            <input type="text" id="alumniFromGrade" name="alumniFromGrade">
+                        </div>
+                        <div class="form-group">
+                            <label for="alumniToGrade">To grade</label>
+                            <input type="text" id="alumniToGrade" name="alumniToGrade">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.2.2 Academic achievements obtained during the period of study in the school applied for (PDF files)</label>
+                        <input type="file" name="alumniAcademicDocs[]" accept=".pdf" multiple>
+                        <small>Upload 4 PDF files</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.2.3 Achievements obtained in co-curricular activities during the period of study in the school applied for (PDF files)</label>
+                        <input type="file" name="alumniCoCurricularDocs[]" accept=".pdf" multiple>
+                        <small>Upload 4 PDF files</small>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="alumniAssociation">7.2.4 Membership of the Alumni Association, academic achievements obtained after school and various forms of support provided for the development of the school (recommended by the Principal)</label>
+                        <textarea id="alumniAssociation" name="alumniAssociation"></textarea>
+                    </div>
+                </div>
+                
+                <!-- 7.3: Siblings -->
+                <div id="section7_3" class="category-section">
+                    <h3>7.3 Brothers/sisters of students already studying in the relevant school</h3>
+                    
+                    <div class="form-group">
+                        <label>7.3.1 If the applicant has a child or children studying in the school</label>
+                        <table class="siblings-table">
+                            <thead>
+                                <tr>
+                                    <th>Name of the child</th>
+                                    <th>Grade and admission number</th>
+                                    <th>Grade entered in this school</th>
+                                    <th>Number of grades passed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" name="siblingName[]"></td>
+                                    <td><input type="text" name="siblingGradeAdmission[]"></td>
+                                    <td><input type="text" name="siblingEntryGrade[]"></td>
+                                    <td><input type="number" name="siblingGradesPassed[]" min="0"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="siblingName[]"></td>
+                                    <td><input type="text" name="siblingGradeAdmission[]"></td>
+                                    <td><input type="text" name="siblingEntryGrade[]"></td>
+                                    <td><input type="number" name="siblingGradesPassed[]" min="0"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="siblingName[]"></td>
+                                    <td><input type="text" name="siblingGradeAdmission[]"></td>
+                                    <td><input type="text" name="siblingEntryGrade[]"></td>
+                                    <td><input type="number" name="siblingGradesPassed[]" min="0"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="siblingName[]"></td>
+                                    <td><input type="text" name="siblingGradeAdmission[]"></td>
+                                    <td><input type="text" name="siblingEntryGrade[]"></td>
+                                    <td><input type="number" name="siblingGradesPassed[]" min="0"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.3.2 Achievements made by siblings in the school and various contributions made by the applicant for the development of the school</label>
+                        <input type="file" name="siblingAchievementsDocs" accept=".pdf,.jpg,.jpeg,.png">
+                        <small>Upload PDF or scanned photo</small>
+                        <input type="text" id="alumniToGrade" name="alumniToGrade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.3.3 Primary document proving residence</label>
+                        <input type="file" name="siblingResidenceDocs[]" accept=".pdf" multiple>
+                        <small>Upload 6 PDF files</small>
+                        <input type="text" id="alumniToGrade" name="alumniToGrade">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="siblingApplicantElectoral">7.3.4 Number of years the applicant's name has been included in the electoral roll</label>
+                            <input type="number" id="siblingApplicantElectoral" name="siblingApplicantElectoral" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="siblingSpouseElectoral">Number of years the spouse's name has been included in the electoral roll</label>
+                            <input type="number" id="siblingSpouseElectoral" name="siblingSpouseElectoral" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="siblingGuardianElectoral">Number of years the legal guardian's name has been included in the electoral roll</label>
+                            <input type="number" id="siblingGuardianElectoral" name="siblingGuardianElectoral" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.3.5 Number of other schools closer to the place of residence than this school where the child can be admitted</label>
+                        <input type="number" name="siblingCloserSchools" min="0">
+                    </div>
+                </div>
+                
+                <!-- 7.4: Staff children -->
+                <div id="section7_4" class="category-section">
+                    <h3>7.4 Children of persons belonging to the staff of an institution directly affecting government school education under the Ministry of Education</h3>
+                    
+                    <div class="form-group">
+                        <label>7.4.1 Position and period of service as a permanent employee of the relevant institutions</label>
+                        <input type="file" name="staffPositionDocs" accept=".pdf">
+                        <small>Upload PDF</small>
+                        <input type="text" id="alumniToGrade" name="alumniToGrade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.4.2 Continuous period of service in a difficult school if currently employed in a difficult school</label>
+                        <input type="file" name="staffDifficultSchoolDocs" accept=".pdf">
+                        <small>Upload PDF</small>
+                        <input type="text" id="alumniToGrade" name="alumniToGrade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.4.3 I. Period of service in a difficult school if employed</label>
+                        <input type="file" name="staffServicePeriodDocs" accept=".pdf">
+                        <small>Upload PDF</small>
+                        <input type="text" id="alumniToGrade" name="alumniToGrade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>II. Name of the place of first appointment</label>
+                        <input type="text" name="staffFirstAppointmentPlace">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" name="staffFirstAppointmentAddress">
+                        </div>
+                        <div class="form-group">
+                            <label>Period of service</label>
+                            <input type="text" name="staffFirstAppointmentPeriod">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Distance from the place of first appointment to the permanent residence (km.)</label>
+                        <input type="number" name="staffFirstAppointmentDistance" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Address of the permanent residence at the time of first appointment</label>
+                        <input type="text" name="staffFirstAppointmentResidence">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.4.4 Number of days of leave not taken</label>
+                        <div class="form-row">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="staffLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.4.5 If employed in the same school as the applicant, period of service at that school</label>
+                        <input type="file" name="staffSameSchoolDocs" accept=".pdf">
+                        <small>Upload PDF</small>
+                        <input type="text" id="alumniToGrade" name="alumniToGrade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.4.6 Distance from the place of permanent residence to the school being applied for (km.)</label>
+                        <input type="number" name="staffResidenceDistance" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.4.7 Main document proving residence</label>
+                        <input type="file" name="staffResidenceDocs" accept=".pdf">
+                        <small>Upload PDF</small>
+                        <input type="text" id="alumniToGrade" name="alumniToGrade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.4.8 Distance from current place of work to the school applied for (km)</label>
+                        <input type="number" name="staffWorkDistance" min="0" step="0.1">
+                    </div>
+                </div>
+                
+                <!-- 7.5: Transferred officers -->
+                <div id="section7_5" class="category-section">
+                    <h3>7.5 Children of officers who have received transfers/annual government transfers due to government service requirements</h3>
+                    
+                    <div class="form-group">
+                        <label>7.5.1 Date of last transfer and assuming duties at new place of work</label>
+                        <input type="date" name="transferLastTransferDate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.2 Name and address of new place of work in relation to transfer</label>
+                        <textarea name="transferNewWorkDetails"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.3 Address of new place of residence after transfer</label>
+                        <textarea name="transferNewResidence"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.4 Name and address of previous place of work in relation to transfer</label>
+                        <textarea name="transferPreviousWorkDetails"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.5 Address of previous place of residence after transfer</label>
+                        <textarea name="transferPreviousResidence"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>7.5.6 Continuous service period at previous place of work from</label>
+                            <input type="date" name="transferServiceStart">
+                        </div>
+                        <div class="form-group">
+                            <label>to</label>
+                            <input type="date" name="transferServiceEnd">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.7 Distance between previous place of work and new place of work in relation to transfer (km)</label>
+                        <input type="number" name="transferWorkDistance" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.8 If spouse is employed, details of his/her places of work in the last 05 years</label>
+                        <table class="spouse-work-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Name of place of work</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" name="spouseWorkYear[]" placeholder="Year"></td>
+                                    <td><input type="text" name="spouseWorkPlace[]" placeholder="Work place"></td>
+                                    <td><input type="text" name="spouseWorkAddress[]" placeholder="Address"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="spouseWorkYear[]" placeholder="Year"></td>
+                                    <td><input type="text" name="spouseWorkPlace[]" placeholder="Work place"></td>
+                                    <td><input type="text" name="spouseWorkAddress[]" placeholder="Address"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="spouseWorkYear[]" placeholder="Year"></td>
+                                    <td><input type="text" name="spouseWorkPlace[]" placeholder="Work place"></td>
+                                    <td><input type="text" name="spouseWorkAddress[]" placeholder="Address"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="spouseWorkYear[]" placeholder="Year"></td>
+                                    <td><input type="text" name="spouseWorkPlace[]" placeholder="Work place"></td>
+                                    <td><input type="text" name="spouseWorkAddress[]" placeholder="Address"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="spouseWorkYear[]" placeholder="Year"></td>
+                                    <td><input type="text" name="spouseWorkPlace[]" placeholder="Work place"></td>
+                                    <td><input type="text" name="spouseWorkAddress[]" placeholder="Address"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.9 Number of other schools that the child can enroll in that are closer to the place of residence than this school being applied for</label>
+                        <input type="number" name="transferCloserSchools" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.10 State / Institution / Period of service as a Statutory Board / State Bank employee</label>
+                        <textarea name="transferServiceDetails"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.5.11 Number of days of leave not availed</label>
+                        <div class="form-row">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Year" min="0">
+                            <input type="number" name="transferLeaveDays[]" placeholder="Days" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>If you have extra documents</label>
+                        <input type="file" name="transferExtraDocs[]" accept=".pdf" multiple>
+                        <small>Upload PDF files</small>
+                    </div>
+                </div>
+                
+                <!-- 7.6: Residing abroad -->
+                <div id="section7_6" class="category-section">
+                    <h3>7.6 Children of persons residing abroad with the child</h3>
+                    
+                    <div class="form-group">
+                        <label>7.6.1 Date of return to the island from abroad</label>
+                        <input type="date" name="abroadReturnDate">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>7.6.2 Period of continuous stay abroad with the child from date</label>
+                            <input type="date" name="abroadStayFrom">
+                        </div>
+                        <div class="form-group">
+                            <label>to date</label>
+                            <input type="date" name="abroadStayTo">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.6.3 Reason for going abroad</label>
+                        <textarea name="abroadReason"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>7.6.4 Number of other schools available for the child to attend which are closer to the place of residence than the school applied for</label>
+                        <input type="number" name="abroadCloserSchools" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>If you have extra documents</label>
+                        <input type="file" name="abroadExtraDocs[]" accept=".pdf" multiple>
+                        <small>Upload PDF files</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 08: Declaration -->
+            <section class="form-section">
+                <h2>08. Declaration</h2>
+                <div class="declaration-text">
+                    <p>I hereby declare that my child is not currently attending any government or government approved private or other school for education. I agree to the provisions and instructions regarding the admission of children to the first grade published in the newspaper as set out in Nos. 01 to 12. I further declare that the information given above is true and I agree to furnish satisfactory evidence of the permanent residence and other information given herein. I understand that if any of the information given by me is found to be false/fraudulent, my application will be rejected. I agree that if my child is admitted to the school and the information is found to be false/fraudulent, he/she will be withdrawn from the school and admitted to another school in the area to be designated by the Provincial Director of Education.</p>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signatureDate">Date</label>
+                        <input type="date" id="signatureDate" name="signatureDate" required>
+                        <div class="signature-container">
+                    
+                    </div>
+                    <div class="form-group">
+                        <label>Signature of Mother/Father/Legal Guardian</label>
+                        <input type="file" id="signatureImage" name="signatureImage" accept="image/*" required>
+                        <small>Upload scanned photo of signature</small>
+                    </div>
+                     
+                </div>
+            </section>
+
+            <section>
+                <div class="form-group">
+                        <label>Copies of Child's birth certificate</label>
+                        <input type="file" id="signatureImage" name="signatureImage" accept="image/*" required>
+                        <small>Upload scanned photo of signature</small>
+                </div>
+
+                <div class="form-group">
+                        <label>Copies of parents' birth certificates</label>
+                        <input type="file" id="signatureImage" name="signatureImage" accept="image/*" required>
+                        <small>Upload scanned photo of signature</small>
+                </div>
+
+                <div class="form-group">
+                        <label>Affidavit</label>
+                        <input type="file" id="signatureImage" name="signatureImage" accept="image/*" required>
+                        <small>Upload scanned photo of signature</small>
+                </div>
+
+            </section>
+
+                <div class="form-group">
+                        <label>Enter Your Email</label>
+                        <textarea name="abroadReason"></textarea>
+                </div>
+
+
+            <div class="form-actions">
+                <button type="submit" id="saveDraft" class="btn-secondary">Save Draft</button>
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="js/grade1.js"></script>
+</body>
+</html>

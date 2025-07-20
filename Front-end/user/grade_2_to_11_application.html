@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form (Grades 2-11)</title>
+    <link rel="stylesheet" href="css/u-style.css">
+</head>
+<body>
+    <div class="container">
+        
+
+        <form id="admissionForm" action="../../backend/user/grade_2_11_process_form.php" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Office to be applied for:</label>
+                    <input type="email" name="applicantEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Year: 20</label>
+                    <input type="text" name="year" pattern="[0-9]{2}" required>
+                </div>
+            </div>
+          
+          
+            <!-- Section 01: Student Details -->
+            <section class="form-section">
+                <h2>01. Details of the student</h2>
+                
+                <div class="form-group">
+                    <label for="fullName">1.1 Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nameSinhalaTamil">1.2 Name with Initials (Sinhala/Tamil):</label>
+                        <input type="text" id="nameSinhalaTamil" name="nameSinhalaTamil" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameEnglish">1.3 Name with Initials (English):</label>
+                        <input type="text" id="nameEnglish" name="nameEnglish" required placeholder="E.g. W. A. C. D. Wijerathna">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>1.4 Gender:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="Male" required> Male</label>
+                            <label><input type="radio" name="gender" value="Female"> Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>1.6 Language:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="language" value="Sinhala" required> Sinhala</label>
+                            <label><input type="radio" name="language" value="Tamil"> Tamil</label>
+                            <label><input type="radio" name="language" value="English"> English</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>1.7 Date of Birth:</label>
+                    <div class="dob-inputs">
+                        <input type="number" name="birthYear" placeholder="Year" min="1900" max="2025" required>
+                        <select name="birthMonth" required>
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="number" name="birthDay" placeholder="Day" min="1" max="31" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>1.8 Age as on 31st January 20<input type="text" name="ageYear" pattern="[0-9]{2}" required>:</label>
+                    <div class="age-inputs">
+                        <input type="number" name="ageYears" placeholder="Years" min="0" required>
+                        <input type="number" name="ageMonths" placeholder="Months" min="0" max="11" required>
+                        <input type="number" name="ageDays" placeholder="Days" min="0" max="30" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentSchool">1.9 School and Grade currently being studied:</label>
+                    <input type="text" id="currentSchool" name="currentSchool" required>
+                </div>
+            </section>
+
+            <!-- Section 02: Applicant Details -->
+            <section class="form-section">
+                <h2>02. Details of the applicant (Father/Mother/Guardian's name)</h2>
+                
+                <div class="form-group">
+                    <label for="applicantFullName">2.1 Full name:</label>
+                    <input type="text" id="applicantFullName" name="applicantFullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantInitials">2.2 Name with initials:</label>
+                    <input type="text" id="applicantInitials" name="applicantInitials" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicantNIC">2.3 National Identity Card number:</label>
+                        <input type="text" id="applicantNIC" name="applicantNIC" required>
+                    </div>
+                    <div class="form-group">
+                        <label>2.4 Is the person a Sri Lankan?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="isSriLankan" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="isSriLankan" value="No"> No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantReligion">2.5 Religion:</label>
+                    <select id="applicantReligion" name="applicantReligion" required>
+                        <option value="">Select</option>
+                        <option value="Buddhist">Buddhist</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Christian">Christian</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantAddress">2.6 Physical Address:</label>
+                    <textarea id="applicantAddress" name="applicantAddress" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicantPhone">2.7 Telephone Number:</label>
+                        <input type="tel" id="applicantPhone" name="applicantPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantDistrict">2.8 District of current residence:</label>
+                        <input type="text" id="applicantDistrict" name="applicantDistrict" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicantDSDivision">2.9 Divisional Secretariat Division of current residence:</label>
+                        <input type="text" id="applicantDSDivision" name="applicantDSDivision" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantEducationDivision">2.10 Divisional Education Office Division of current residence:</label>
+                        <input type="text" id="applicantEducationDivision" name="applicantEducationDivision" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantCurrentAddress">2.11 Address of current residence:</label>
+                    <textarea id="applicantCurrentAddress" name="applicantCurrentAddress" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="applicantPreviousAddress">2.12 Address of previous residence if residence has changed:</label>
+                    <textarea id="applicantPreviousAddress" name="applicantPreviousAddress"></textarea>
+                </div>
+            </section>
+
+            <!-- Section 03: Other Schools -->
+            <section class="form-section">
+                <h2>03. Other schools to be included</h2>
+                
+                <table class="schools-table">
+                    <thead>
+                        <tr>
+                            <th>Sub-No.</th>
+                            <th>Name of school</th>
+                            <th>Type of school (National/Provincial)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="otherSchoolsBody">
+                        <tr>
+                            <td>01.</td>
+                            <td><input type="text" name="otherSchool[]" required></td>
+                            <td>
+                                <select name="otherSchoolType[]" required>
+                                    <option value="">Select</option>
+                                    <option value="National">National</option>
+                                    <option value="Provincial">Provincial</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- Additional rows will be added by JavaScript -->
+                    </tbody>
+                </table>
+                <!--button type="button" id="addSchoolRow" class="btn-add">+ Add Another School</button>-->
+            </section>
+
+            <!-- Section 04: Category Specific Sections -->
+            <section class="form-section">
+                <h2>04. Complete only the sections according to the category of application</h2>
+                
+                <div class="category-selector">
+                    <label>Select Category:</label>
+                    <select id="categorySelector">
+                        <option value="">-- Select Category --</option>
+                        <option value="4.1">4.1 Children of candidates who passed examination in Parliament</option>
+                        <option value="4.2">4.2 Children of transferred government officers</option>
+                        <option value="4.6">4.6 Children with political name in first grade contract (Grade 2 only)</option>
+                        <option value="4.7">4.7 Students exceeding district mark limit in scholarship test (Grades 7-10)</option>
+                        <option value="4.8">4.8 Children of government officials with 3+ years service</option>
+                    </select>
+                </div>
+                
+                <!-- Category 4.1 -->
+                <div class="category-section" id="category4_1">
+                    <h3>4.1 Children of the candidates who have passed the examination in the Parliament</h3>
+                    
+                    <div class="form-group">
+                        <label>4.1.1 Distance from the place of residence to the school (in kilometers):</label>
+                        <input type="number" name="distance4_1_1" step="0.1" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.1.2 Reason for leaving the school currently being studied:</label>
+                        <textarea name="reason4_1_2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Category 4.2 -->
+                <div class="category-section" id="category4_2">
+                    <h3>4.2 Children of transferred government officers</h3>
+                    
+                    <div class="form-group">
+                        <label>4.2.1 Education of the spouse who is working in the service area:</label>
+                        <input type="text" name="spouseEducation4_2_1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.5.2 Name and address of the new service area of the spouse:</label>
+                        <textarea name="newServiceArea4_5_2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.5.3 Name and address of the previous service area of the spouse:</label>
+                        <textarea name="previousServiceArea4_5_3"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>4.5.4 Period of service in the previous service area (From):</label>
+                            <input type="date" name="servicePeriodFrom4_5_4">
+                        </div>
+                        <div class="form-group">
+                            <label>To:</label>
+                            <input type="date" name="servicePeriodTo4_5_4">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.5.5 Period of service as on submission date:</label>
+                        <div class="form-row">
+                            <input type="number" name="serviceYears4_5_5" placeholder="Years" min="0">
+                            <input type="number" name="serviceMonths4_5_5" placeholder="Months" min="0" max="11">
+                            <input type="number" name="serviceDays4_5_5" placeholder="Days" min="0" max="30">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.5.6 Distance from residence to school (in kilometers):</label>
+                        <input type="number" name="distance4_5_6" step="0.1" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.5.7 Life certificate:</label>
+                        <input type="file" name="lifeCertificate4_5_7" accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+                </div>
+                
+                <!-- Category 4.6 -->
+                <div class="category-section" id="category4_6">
+                    <h3>4.6 Children with political name in first grade contract (Grade 2 only)</h3>
+                    
+                    <div class="form-group">
+                        <label>4.6.1 Is political name mentioned in first grade application contract?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="politicalNameMentioned4_6_1" value="Yes"> Yes</label>
+                            <label><input type="radio" name="politicalNameMentioned4_6_1" value="No"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.6.2 Application Contract Political Number:</label>
+                        <input type="text" name="contractPoliticalNumber4_6_2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.6.3 Application Contract Political Nationality:</label>
+                        <input type="text" name="contractPoliticalNationality4_6_3">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.6.4 Distance from residence to school (in kilometers):</label>
+                        <input type="number" name="distance4_6_4" step="0.1" min="0">
+                    </div>
+                </div>
+                
+                <!-- Category 4.7 -->
+                <div class="category-section" id="category4_7">
+                    <h3>4.7 Students exceeding district mark limit in scholarship test (Grades 7-10)</h3>
+                    
+                    <div class="form-group">
+                        <label>4.7.1 Year of appearing in the scholarship test:</label>
+                        <input type="number" name="scholarshipYear4_7_1" min="2000" max="2025">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.7.2 District where scholarship test was taken:</label>
+                        <input type="text" name="scholarshipDistrict4_7_2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.7.3 Marks obtained in the scholarship test:</label>
+                        <input type="number" name="scholarshipMarks4_7_3" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.7.4 Distance from residence to school (in kilometers):</label>
+                        <input type="number" name="distance4_7_4" step="0.1" min="0">
+                    </div>
+                </div>
+                
+                <!-- Category 4.8 -->
+                <div class="category-section" id="category4_8">
+                    <h3>4.8 Children of government officials with 3+ years service</h3>
+                    
+                    <div class="form-group">
+                        <label>4.8.1 Nationality and name/address of current service area:</label>
+                        <div class="form-row">
+                            <input type="text" name="nationality4_8_1" placeholder="Nationality">
+                            <input type="text" name="serviceAreaName4_8_1" placeholder="Name and address">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.8.2 Period of service in current service area:</label>
+                        <input type="text" name="servicePeriod4_8_2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.8.3 Period of service in the field:</label>
+                        <input type="text" name="fieldServicePeriod4_8_3">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4.8.4 Distance from residence to school (in kilometers):</label>
+                        <input type="number" name="distance4_8_4" step="0.1" min="0">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4.9: Educational Progress -->
+            <section class="form-section">
+                <h2>4.9 Educational Progress of the Students</h2>
+                
+                <div class="form-group">
+                    <label>(a) If the student appeared for the 05th scholarship scheme</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Relevant year:</label>
+                            <input type="number" name="scholarshipYear4_9_a" min="2000" max="2025">
+                        </div>
+                        <div class="form-group">
+                            <label>Marks obtained:</label>
+                            <input type="number" name="scholarshipMarks4_9_a" min="0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>(b) Current educational progress</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Total marks in last term examination:</label>
+                            <input type="number" name="lastTermMarks4_9_b" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Average of total marks:</label>
+                            <input type="number" name="lastTermAverage4_9_b" min="0" step="0.01">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4.10: Achievements -->
+           <!--- <section class="form-section">
+                <h2>4.10 Sports / Aesthetics / Invention / Co-curricular activity in last 03 years</h2>
+                
+                <div class="achievement-section">
+                    <h3>Achievements in Sports</h3>
+                    <table class="achievement-table" id="sportsTable">
+                        <thead>
+                            <tr>
+                                <th>Sports competitions</th>
+                                <th>Year of achievement</th>
+                                <th>Level (School/Division/Regional/Provincial/National/International)</th>
+                                <th>Position (1/2/3)</th>
+                                <br>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="sportsCompetition[]"></td>
+                                <td><input type="number" name="sportsYear[]" min="2000" max="2025"></td>
+                                <td>
+                                    <select name="sportsLevel[]">
+                                        <option value="School">School</option>
+                                        <option value="Division">Division</option>
+                                        <option value="Regional">Regional</option>
+                                        <option value="Provincial">Provincial</option>
+                                        <option value="National">National</option>
+                                        <option value="International">International</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="sportsPosition[]">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </td>
+                                <!--<td><button type="button" class="btn-remove" onclick="removeRow(this)">Remove</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn-add" onclick="addSportsRow()">+ Add Another Row</button>-->
+                </div>
+                
+                <!-- Similar sections for Aesthetics, Inventions, etc. 
+                <div class="achievement-section">
+                    <h3>Achievements in Aesthetics</h3>
+                    <table class="achievement-table" id="aestheticsTable">
+                        < Similar structure as sports table >
+                    </table>
+                    <button type="button" class="btn-add" onclick="addAestheticsRow()">+ Add Another Row</button>
+                </div>
+                
+                <div class="achievement-section">
+                    <h3>Achievements in Innovations</h3>
+                    <table class="achievement-table" id="innovationsTable">
+                        <Similar structure as sports tabl>
+                    </table>
+                    <button type="button" class="btn-add" onclick="addInnovationsRow()">+ Add Another Row</button>
+                </div>
+                
+                <div class="achievement-section">
+                    <h3>Special mentions and ceremonial activities</h3>
+                    <table class="achievement-table" id="specialMentionsTable">
+                        <Similar structure ->
+                    </table>
+                    <button type="button" class="btn-add" onclick="addSpecialMentionRow()">+ Add Another Row</button>
+                </div>
+                
+                <div class="achievement-section">
+                    <h3>Maintenance references</h3>
+                    <table class="achievement-table" id="maintenanceTable">
+                        < Similar structure ->
+                    </table>
+                    <button type="button" class="btn-add" onclick="addMaintenanceRow()">+ Add Another Row</button>
+                </div>
+            </section>-->
+
+            <!-- Declaration -->
+            <section class="form-section">
+                <div class="declaration">
+                    <p>Hereby, the above information is true and correct, and I hereby declare that the system and the information provided herein are in accordance with the system and there are no requests for any changes in the future, except in the event of any errors. The above system has been established for the grade, I hereby affix my signature hereto.</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date:</label>
+                            <input type="date" name="declarationDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mother/Father/Legal Guardian's Signature:</label>
+                            <input type="file" name="guardianSignature" accept="image/*" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <p>This is hereby prepared by the Ministry of Education and in accordance with Circular No. 17/2023 dated 25. 04. 2023.</p>
+                    </div>
+                </div>
+            </section>
+
+             <div class="form-group">
+                        <label>Enter Your Email</label>
+                        <textarea name="abroadReason"></textarea>
+                </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/grade2to11.js"></script>
+</body>
+</html>

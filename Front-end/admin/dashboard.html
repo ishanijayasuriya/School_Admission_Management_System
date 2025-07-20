@@ -1,0 +1,114 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Admin - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <span>Admin Panel</span>
+            </div>
+            <ul>
+                <li class="active"><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="../../backend/admin/application_view.php"><i class="fas fa-file-alt"></i> Applications</a></li>
+                <li><a href="u_accounts_management.html"><i class="fas fa-users"></i> User Management</a></li>
+                <!--<li><a href="a_system_seting.html"><i class="fas fa-cog"></i> Settings</a></li>-->
+            </ul>
+            <div class="sidebar-footer">
+                <a href="../../backend/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Dashboard Overview</h1>
+                 
+            </header>
+
+            <div class="stats-cards">
+                <div class="card">
+                    <div class="card-icon bg-primary">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Total Applications</h3>
+                        <p>1,245</p>
+                        <span class="trend up">+12% from last month</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon bg-success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Approved</h3>
+                        <p>856</p>
+                        <span class="trend up">+8% from last month</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon bg-warning">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Pending Review</h3>
+                        <p>289</p>
+                        <span class="trend down">-5% from last month</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon bg-danger">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Rejected</h3>
+                        <p>100</p>
+                        <span class="trend">No change</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-row">
+                <div class="chart-container">
+                    <h2>Applications by Grade</h2>
+                    <canvas id="gradeChart"></canvas>
+                </div>
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>You approved application #GL2023-00456</p>
+                                <span class="activity-time">10 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>New application received from John Doe</p>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                        </div>
+                        <!-- More activity items -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+    <script src="js/admin.js"></script>
+</body>
+</html>

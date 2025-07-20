@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 6 Admission Form</title>
+    <link rel="stylesheet" href="css/u-style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="admissionForm" action="../../backend/user/grade_6_process_form.php" method="POST" enctype="multipart/form-data">
+            <div class="form-section">
+                <h2 class="lang-si">6 වන ශ්‍රේණියට ඇතුලත්වීම සඳහා අයදුම් පත්‍රය</h2>
+                <h2 class="lang-ta">6 ஆம் ஆண்டுக்கான விண்ணப்பப்படிவம்</h2>
+                <h2 class="lang-en">For Admission to Grade Six of................................................................. Vidyalaya</h2>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">01. දැනට ඉගෙනුම ලබන විද්‍යාලය</label>
+                    <label class="lang-ta">01. படிக்கும் பாடசாலையி</label>
+                    <label class="lang-en">01. School Attending</label>
+                    <input type="text" name="current_school" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">02. අධ්‍යාපන කලාපය</label>
+                    <label class="lang-ta">02. கல்வி மண்டலம்</label>
+                    <label class="lang-en">02. Educational Zone</label>
+                    <input type="text" name="educational_zone" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">03. ශිෂ්‍යයා/ශිෂ්‍යාවගේ නම</label>
+                    <label class="lang-ta">03. மாணவர் பெயர்</label>
+                    <label class="lang-en">03. Student's Name</label>
+                    <input type="text" name="student_name" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">04. මාධ්‍යය</label>
+                    <label class="lang-ta">04. நடுத்தர</label>
+                    <label class="lang-en">04. Medium</label>
+                    <select name="medium" required>
+                        <option value="">Select Medium</option>
+                        <option value="Sinhala">සිංහල / Sinhala</option>
+                        <option value="Tamil">தமிழ் / Tamil</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">05. ස්ත්‍රී/පුරුෂ භාවය</label>
+                    <label class="lang-ta">05. பெண்பாலா / ஆண்பாலா</label>
+                    <label class="lang-en">05. Sex Whether Male or Female</label>
+                    <select name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">පුරුෂ / ஆண் / Male</option>
+                        <option value="Female">ස්ත්‍රී / பெண் / Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">06. උපන් දිනය</label>
+                    <label class="lang-ta">06. பிறந்த தேதி</label>
+                    <label class="lang-en">06. Date of Birth</label>
+                    <div class="dob-inputs">
+                        <input type="number" name="birth_year" placeholder="Year" min="1900" max="2025" required>
+                        <select name="birth_month" required>
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="number" name="birth_day" placeholder="Date" min="1" max="31" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">07. මව/පියා/භාරකරුගේ නම</label>
+                    <label class="lang-ta">07. தாய்/தந்தையின் பாதுகாவலரின் பெயர்</label>
+                    <label class="lang-en">07. The Name of Mother/Father Guardian</label>
+                    <input type="text" name="guardian_name" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">08. ලිපිනය</label>
+                    <label class="lang-ta">08. முகவரி</label>
+                    <label class="lang-en">08. Address</label>
+                    <textarea name="address" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">09. දුරකථන අංකය</label>
+                    <label class="lang-ta">09. தொலைபேசி எண்</label>
+                    <label class="lang-en">09. Telephone Number</label>
+                    <input type="tel" name="telephone" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="lang-si">10. 5 ශ්‍රේණිය ශිෂ්‍යත්ව විභාගයෙන් ලබාගත් ලකුණු</h3>
+                <h3 class="lang-ta">10. தரம் 5 புலமைப்பரிசில் பரீட்சையில் மாணவர் பெற்ற புள்ளிகள்</h3>
+                <h3 class="lang-en">10. Student's Marks Obtained from Grade 5 Scholarship Examination</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="lang-si">ලකුණු</label>
+                        <label class="lang-ta">மதிப்பெண்கள்</label>
+                        <label class="lang-en">Marks</label>
+                        <input type="number" name="scholarship_marks" min="0" max="200" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="lang-si">සුචියේ අංකය</label>
+                        <label class="lang-ta">குறிப்பீட்டு எண்</label>
+                        <label class="lang-en">Index No.</label>
+                        <input type="text" name="scholarship_index" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="lang-si">වර්ෂය</label>
+                        <label class="lang-ta">ஆண்டு</label>
+                        <label class="lang-en">Year</label>
+                        <input type="number" name="scholarship_year" min="2000" max="2025" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">11. විශේෂ දක්ෂතා ඇත්නම්</label>
+                    <label class="lang-ta">11. சிறப்பு செயல்திறன்</label>
+                    <label class="lang-en">11. Special Efficiencies</label>
+                    <textarea name="special_skills"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">මව/පියා භාරකරුගේ අත්සන</label>
+                    <label class="lang-ta">பெற்றோர் பாதுகாவலரின் கையொப்பம்</label>
+                    <label class="lang-en">Signature of Mother/Father of Guardian</label>
+                    <input type="file" name="guardian_signature" accept="image/*" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="lang-si">දැනට ඉගෙනුම ලබන විද්‍යාලයේ විදුහල්පතිගේ සහතිකය</label>
+                    <label class="lang-ta">தற்போதைய பள்ளியின் தலைவரிடமிருந்து சான்றிதழ்</label>
+                    <label class="lang-en">The Certificate from the head of the present School</label>
+                    <input type="file" name="principal_certificate" accept="image/*,.pdf" required>
+                </div>
+                
+                <div class="declaration">
+                    <p class="lang-si">ඉහත සඳහන් තොරතුරු නිවැරදි බව සහතික කරමි.</p>
+                    <p class="lang-ta">மேலே கொடுக்கப்பட்டுள்ள விவரங்கள் சரியானவை என்று சான்றளிக்கிறேன்</p>
+                    <p class="lang-en">I certify that the details given above are correct.</p>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                         <label class="lang-si">විදුහල්පති අත්සන</label>
+                        <label class="lang-ta">முதல்வரின் கையொப்பம்</label>
+                        <label class="lang-en">Signature of Principal</label>
+                        <input type="file" name="principal_signature" accept="image/*" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="lang-si">විදුහලේ නම හා ලිපිනය</label>
+                        <label class="lang-ta">பள்ளி பெயர் முகவரி</label>
+                        <label class="lang-en">Name of Schools an Address</label>
+                        <input type="text" name="school_name_address" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="lang-si">නිල මුද්‍රාව</label>
+                        <label class="lang-ta">அதிகாரப்பூர்வ முத்திரை</label>
+                        <label class="lang-en">Seal Official</label>
+                        <input type="file" name="official_seal" accept="image/*" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="lang-si">දිනය</label>
+                        <label class="lang-ta">திகதி</label>
+                        <label class="lang-en">Date</label>
+                        <input type="date" name="certificate_date" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <label>Enter Your Email</label>
+                        <textarea name="abroadReason"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit lang-si">ඉදිරිපත් කරන්න</button>
+                <button type="submit" class="btn-submit lang-ta">சமர்ப்பிக்கவும்</button>
+                <button type="submit" class="btn-submit lang-en">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/grade6.js"></script>
+</body>
+</html>

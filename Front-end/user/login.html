@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/u-style.css">
+</head>
+<body>
+    
+    
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="../../backend/login.php" method="POST">
+                <input type="hidden" name="role" value="user">
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+
+                <div class="login-links">
+                    <a href="password.html">Forgot Password?</a>  
+                    <span> | </span>
+                    <a href="../registration.html">Register</a>
+                </div>
+            
+
+        </div>    
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>                 

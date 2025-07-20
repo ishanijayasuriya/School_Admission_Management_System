@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Application Form</title>
+    <link rel="stylesheet" href="css/u-style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-title">
+            <h2>
+                The Application for the admission to G.C.E. (A/L) Class of
+                <input type="text" placeholder="Vidyalaya 20........" style="width: 300px; text-align: center;">
+            </h2>
+            <h1>
+                <span class="lang-si">අ.පො.ස. (උසස් පෙළ) පංතියට ඇතුළත් වීම සඳහා අයදුම්පත්‍රය</span>
+            </h1>
+        </div>
+        
+        <form id="schoolForm" action="../../backend/user/grade_12_process.php" method="POST" enctype="multipart/form-data">
+            <!-- First page fields -->
+            <div class="section-header">
+                <span>Personal Information</span>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">01. ශිෂ්‍යයාගේ / ශිෂ්‍යාවගේ සම්පූර්ණ නම</span>
+                    <br>Full Name of the Student
+                </label>
+                <input type="text" name="fullName" placeholder="Full Name">
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">මුල් අකුරු සමඟ නම</span>
+                    <br>Name With Initials
+                </label>
+                <input type="text" name="nameWithInitials" placeholder="Name with Initials">
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">02. ස්ථිර ලිපිනය</span>
+                    <br>Permanent Address
+                </label>
+                <textarea name="permanentAddress" rows="2" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <label>
+                        <span class="lang-si">03. දුරකථන අංකය</span>
+                        <br>Telephone Number
+                    </label>
+                    <input type="tel" name="telephone" placeholder="Telephone Number">
+                </div>
+                
+                <div class="form-col">
+                    <label>
+                        <span class="lang-si">03. පිරිමි/ස්ත්‍රී භාවය</span>
+                        <br>Whether Male or Female
+                    </label>
+                    <select name="gender">
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">04. ඉගෙනගන්නා මාධ්‍යය</span>
+                    <br>Medium of Teaching
+                </label>
+                <select name="teachingMedium">
+                    <option value="">Select Medium</option>
+                    <option value="sinhala">Sinhala</option>
+                    <option value="english">English</option>
+                    <option value="tamil">Tamil</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">05. මව/පියා/භාරකරුගේ ලිපිනය</span>
+                    <br>Address of Mother/Father/Guardian
+                </label>
+                <textarea name="guardianAddress" rows="2" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">06. උපන් දිනය</span>
+                    <br>Date of Birth
+                </label>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label>Year</label>
+                        <input type="text" name="birthYear" placeholder="Year">
+                    </div>
+                    <div class="form-col">
+                        <label>Month</label>
+                        <select name="birthMonth">
+                            <option value="">Select</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="form-col">
+                        <label>Date</label>
+                        <input type="text" name="birthDate" placeholder="Date">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">07. 20.......... ජනවාරි 31 දිනට වයස</span>
+                    <br>The age at 20..... January 31st
+                </label>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label>Year</label>
+                        <input type="text" name="ageYear" placeholder="Year">
+                    </div>
+                    <div class="form-col">
+                        <label>Month</label>
+                        <input type="text" name="ageMonth" placeholder="Month">
+                    </div>
+                    <div class="form-col">
+                        <label>Date</label>
+                        <input type="text" name="ageDate" placeholder="Date">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">08. ජාතික හැඳුනුම්පත් අංකය</span>
+                    <br>National Identity Card No.
+                </label>
+                <input type="text" name="nic" placeholder="National Identity Card Number">
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">09. අ.පො.ස. (සා.පෙළ) ඉගෙනුම ලැබූ පාසලේ නම ලිපිනය හා ඇතුළත් වීමේ අංකය</span>
+                    <br>The Name and the Address of the School studied and the Admission No.
+                </label>
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" name="olSchoolName" placeholder="School Name">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" name="olSchoolAddress" placeholder="School Address">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" name="admissionNo" placeholder="Admission No.">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">10. එම පාසල පිහිටි දිස්ත්‍රික්කය</span>
+                    <br>The District of the School Situated
+                </label>
+                <input type="text" name="schoolDistrict" placeholder="District">
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">11. විෂය සමගාමී ජයග්‍රහණ</span>
+                    <br>Co-curricular Achievements
+                </label>
+                <textarea name="achievements" rows="2" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">12. අ.පො.ස. (සා.පෙළ) විභාග ප්‍රතිඵල Results of G. C. E. (O/L) Exam</span>
+                </label>
+                
+                <div style="display: flex; margin-bottom: 15px;">
+                    <div style="flex: 1; margin-right: 10px;">
+                        <h4>
+                            <span class="lang-si">පළමු ප්‍රතිඵල 1st Sitting</span>
+                        </h4>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Year</label>
+                                <input type="text" name="ol1Year" placeholder="Year">
+                            </div>
+                            <div class="form-col">
+                                <label>Examination No.</label>
+                                <input type="text" name="ol1ExamNo" placeholder="Examination No.">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <h4>
+                            <span class="lang-si">දෙවන ප්‍රතිඵල 2nd Sitting</span>
+                        </h4>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Year</label>
+                                <input type="text" name="ol2Year" placeholder="Year">
+                            </div>
+                            <div class="form-col">
+                                <label>Examination No.</label>
+                                <input type="text" name="ol2ExamNo" placeholder="Examination No.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">විෂයය</span><br>Subject
+                            </th>
+                            <th style="text-align: center; padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">ශ්‍රේණිය</span><br>Grade
+                            </th>
+                            <th style="text-align: center; padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">පාසල් පදනම් සහතික</span><br>School Based Skill Level
+                            </th>
+                            <th style="text-align: center; padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">ශ්‍රේණිය</span><br>Grade
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">1. සිංහල භාෂාව හා සාහිත්‍ය</span><br>Sinhala Language & Literature
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="sinhalaGrade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="sinhalaSkill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="sinhalaGrade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">2. දෙමළ භාෂාව හා සාහිත්‍ය</span><br>Tamil Language & Literature
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="tamilGrade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="tamilSkill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="tamilGrade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">3. ඉංග්‍රීසි</span><br>English
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="englishGrade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="englishSkill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="englishGrade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">4. ගණිතය</span><br>Maths
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="mathsGrade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="mathsSkill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="mathsGrade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <span class="lang-si">5. විද්‍යාව</span><br>Science
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="scienceGrade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="scienceSkill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="scienceGrade2">
+                            </td>
+                        </tr>
+                        <!-- Add empty rows for subjects 6-10 -->
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject6">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject6Grade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject6Skill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject6Grade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject7">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject7Grade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject7Skill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject7Grade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject8">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject8Grade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject8Skill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject8Grade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject9">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject9Grade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject9Skill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject9Grade2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject10">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject10Grade">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject10Skill">
+                            </td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <input type="text" style="width: 100%; padding: 5px;" name="subject10Grade2">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="margin-bottom: 20px; font-size: 0.9em;">
+                    <p>
+                        <span class="lang-si">(ශ්‍රේණි සංකේත පිළිබඳ විස්තර : A විශිෂ්ඨ, B අති සම්මාන, C සම්මාන, S සාමාන්‍ය, W දුර්වල)</span><br>
+                        <span class="lang-si">(පාසල් පදනම් සහතික අංකයේ ශිෂ්‍යත්ව මට්ටම් සංකේත 1 විශිෂ්ඨ මට්ටම, 2. ඉහළ මට්ටම, 3 සම්මාන මට්ටම, 4 අතුරුදන් මට්ටම, 5 ළඟානොවී)</span><br>
+                        Particulars about grade symbols - A excellent, B distinction, C credit, S simple, W weak<br>
+                        School based evaluation competency level symbols 1. excellent level 2. high level 3. credit level 4. ordinary level 5. not able to reach skill level
+                    </p>
+                </div>
+            </div>
+
+            <!-- Second page fields from previous version -->
+            <div class="section-header">
+                <div class="dual-lang">
+                    <span class="lang-si">13. අපේක්ෂිත විෂය ධාරාව</span>
+                    <span>13. Expected stream of subjects</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">අ.පො.ස. (උසස් පෙළ) ඉගෙනීමට අදහස් කරන විෂයයන්</span>
+                    <br>Intended subjects of study at G. C. E. (A. L)
+                </label>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <label>
+                            <span class="lang-si">විෂයය</span>
+                            <br>Subject
+                        </label>
+                    </div>
+                    <div class="form-col">
+                        <label>
+                            <span class="lang-si">මාධ්‍යය</span>
+                            <br>Medium
+                        </label>
+                    </div>
+                </div>
+
+                 <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="Subject 1" name="Subject1">
+                    </div>
+                    <div class="form-col">
+                        <select name="medium1">
+                        <option value="">Select Medium</option>
+                        <option value="sinhala">Sinhala</option>
+                        <option value="english">English</option>
+                        <option value="tamil">Tamil</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="Subject 2" name="Subject2">
+                    </div>
+                    <div class="form-col">
+                        <select name="medium1">
+                        <option value="">Select Medium</option>
+                        <option value="sinhala">Sinhala</option>
+                        <option value="english">English</option>
+                        <option value="tamil">Tamil</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="Subject 3" name="Subject3">
+                    </div>
+                    <div class="form-col">
+                        <select name="medium1">
+                        <option value="">Select Medium</option>
+                        <option value="sinhala">Sinhala</option>
+                        <option value="english">English</option>
+                        <option value="tamil">Tamil</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="Subject 4" name="Subject4">
+                    </div>
+                    <div class="form-col">
+                        <select name="medium1">
+                        <option value="">Select Medium</option>
+                        <option value="sinhala">Sinhala</option>
+                        <option value="english">English</option>
+                        <option value="tamil">Tamil</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="section-header">
+                <div class="dual-lang">
+                    <p1>ii. කැමැත්ත හා ළඟා වීමේ පහසුව අනුව නව පාසල් 04 ක් (ඉල්ලුම් කරන අදාළ පාසල ද ඇතුලු) නම් කරන්න.</p1>
+                </div>
+             
+                <div class="dual-lang">
+                    <br>ii. Name 04 new schools according to the preference and close Proximity (including the applied school)
+                </div>
+            </div>
+
+    
+            <div class="form-row">
+                <div class="form-col">
+                    <label>
+                        <span class="lang-si">පාසල</span>
+                        <br>School
+                    </label>
+                </div>
+                <div class="form-col">
+                    <label>
+                        <span class="lang-si">ලිපිනය</span>
+                        <br>Address
+                    </label>
+                </div>
+            </div>
+            
+            <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="School 1" name="school1">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" placeholder="Address 1" name="address1">
+                    </div>
+                </div>
+            </div>
+            <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="School 2" name="school2">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" placeholder="Address 2" name="address2">
+                    </div>
+                </div>
+            </div>
+            <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="School 3" name="school3">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" placeholder="Address 3" name="address3">
+                    </div>
+                </div>
+            </div>
+            <div class="school-row">
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="School 4" name="school4">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" placeholder="Address 4" name="address4">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">දැනට ඉගෙනුම / සේවය ලබන්නා වන විදුහලේ විදුහල්පතිගේ සහතිකය</span>
+                    <br>The certificate of the principal of the school in which the student learns at present
+                </label>
+                <div class="form-row">
+                    <div class="form-col">
+                        <input type="text" placeholder="Current School" name="currentSchool">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" placeholder="Grade" name="currentGrade">
+                    </div>
+
+                    <div class="signature-box">
+                        <label>
+                            <span class="lang-si">විදුහල්පතිගේ අත්සන</span>
+                            <br>The signature of principal
+                        </label>
+                        <div class="signature-area" id="guardianSignature"></div>
+                        <button type="button" class="clear-btn" id="clearGuardianSign">Clear</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                           විදුහල්පතිගේ අත්සන
+                           <br>The signature of principal
+                        </label>
+                        <input type="file" id="signatureImage" name="signatureImage" accept="image/*" required>
+                       <small>Upload scanned photo of signature</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">15. සටහන්</span>
+                    <br>15. Notes
+                </label>
+                <textarea name="notes" rows="3" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <span class="lang-si">දිනය</span>
+                    <br>Date
+                </label>
+                <input type="date" name="date" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            
+            <div class="photo-upload">
+                <label>
+                    <span class="lang-si">ඡායාරූපය</span>
+                    <br>Photo Upload
+                </label>
+                <input type="file" id="photoUpload" accept="image/*">
+                <div class="photo-preview" id="photoPreview">
+                    <span>Photo Preview</span>
+                </div>
+            </div>
+            
+            <div class="signature-section">
+                <div class="signature-container">
+                    <div class="signature-box">
+                        <label>
+                            <span class="lang-si">ශිෂ්‍යායාගේ /ශිෂ්‍යාවගේ අත්සන</span>
+                            <br>Student's Signature
+                        </label>
+                        <div class="signature-area" id="studentSignature"></div>
+                        <button type="button" class="clear-btn" id="clearStudentSign">Clear</button>
+                    </div>
+                    
+                    <div class="signature-box">
+                        <label>
+                            <span class="lang-si">පියාගේ/මවගේ භාරකරුගේ අත්සන</span>
+                            <br>The signature of father/mother/guardian
+                        </label>
+                        <div class="signature-area" id="guardianSignature"></div>
+                        <button type="button" class="clear-btn" id="clearGuardianSign">Clear</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span class="lang-si">ශිෂ්‍යායාගේ /ශිෂ්‍යාවගේ අත්සන</span>
+                            <br>Student's Signature
+                        </label>
+                        <input type="file" id="studentSignature" name="studentSignature" accept="image/*" required>
+                        <br>  
+                        <small>Upload scanned photo of signature</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span class="lang-si">පියාගේ/මවගේ භාරකරුගේ අත්සන</span>
+                            <br>The signature of father/mother/guardian
+                        </label>
+                        <input type="file" id="guardianSignature" name="guardianSignature" accept="image/*" required>
+                        <br>
+                        <small>Upload scanned photo of signature</small>
+                    </div>
+                    
+                </div>
+
+                 <div class="form-group">
+                        <label>Enter Your Email</label>
+                        <textarea name="abroadReason"></textarea>
+                </div>
+            </div>
+            </div>
+
+            <div class="form-group" style="text-align: center; margin-top: 30px;">
+                <button type="submit" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px;">
+                    Submit Application
+                </button>
+            </div>
+        </form>        
+    </div>    
+
+       <script src="js/grade12.js"></script>
+            
+</body>
+</html>
